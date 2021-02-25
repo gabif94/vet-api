@@ -1,7 +1,8 @@
 const {Router} = require('express')
 const router = Router()
-const {all} = require('../controllers/patients')
+const {patients_all, patients_single} = require('../controllers/patients')
  
-router.get('/', all)
+router.get('/', patients_all)
+router.get('/:id', patients_single)
 
 module.exports = router

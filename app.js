@@ -1,7 +1,9 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+
 const dotenv = require("dotenv");
+dotenv.config()
 
 //definicion de rutas
 const patients = require('./routes/patients')
@@ -24,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// use de routes
+// use routes
 app.use("/patients", patients);
 
 // catch 404 and forward to error handler
